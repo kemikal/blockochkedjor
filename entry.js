@@ -43,7 +43,7 @@ class BlockChain{
 // Vi skapar vår blockkedja
 const MyChain = new BlockChain();
 
-// Vi matar in tre block till kedjan
+// Vi matar in tre block till kedjan, Kolla här med en if om det redan finns en kedja, skit då i detta.
 MyChain.addBlock({sender: "Janne", reciver: "Kalle", amount: 234});
 MyChain.addBlock({sender: "Pelle", reciver: "Anna", amount: 1234});
 MyChain.addBlock({sender: "Herbert", reciver: "Bengt", amount: 54});
@@ -57,11 +57,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
+    // Denna route printar kedjan inte databasen, för test
     res.send('<h1>Block och kedjor!</h1><div>'+JSON.stringify(MyChain, null, 6)+'</div>')
 });
 
 app.get('/chain', function(req, res, next) {
-
+    // denna route printar kedjan från databasen
     fs.readFile("db.json", function(err, data){
       if (err) {
         console.log(err);
@@ -106,7 +107,7 @@ app.post('/add', function(req, res) {
         }
       })
   
-      res.send(ledger)
+      res.send(MyChain)
       
     });
   });

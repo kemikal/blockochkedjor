@@ -2,8 +2,8 @@
       "chain": [
             {
                   "blockId": 0,
-                  "timestamp": 1644697001109,
-                  "blockHash": "$2b$10$kFxRYb0itSXs5ZBlmW.kd.xja32.9V2EigSWRtVpX3BVfXw4tadhS",
+                  "timestamp": 1644697283726,
+                  "blockHash": "$2b$10$98KRweVdXz6rKAEmorC.UeCWGdla9C2U9fQiBafic2yfCNMtLRipi",
                   "prevHash": "",
                   "data": {
                         "sender": "Janne",
@@ -13,9 +13,9 @@
             },
             {
                   "blockId": 1,
-                  "timestamp": 1644697001177,
-                  "blockHash": "$2b$10$qGguZ4WieEYVxyLzuLAD6uczc1KcJOHEqY.dOep13XhFvjcD9VXea",
-                  "prevHash": "$2b$10$kFxRYb0itSXs5ZBlmW.kd.xja32.9V2EigSWRtVpX3BVfXw4tadhS",
+                  "timestamp": 1644697283793,
+                  "blockHash": "$2b$10$6bxBExfVWONpJakXDbHmT.RhuilYKLW6TK4g3OKCvMk6NSs2u1kxG",
+                  "prevHash": "$2b$10$98KRweVdXz6rKAEmorC.UeCWGdla9C2U9fQiBafic2yfCNMtLRipi",
                   "data": {
                         "sender": "Pelle",
                         "reciver": "Anna",
@@ -24,9 +24,9 @@
             },
             {
                   "blockId": 2,
-                  "timestamp": 1644697001245,
-                  "blockHash": "$2b$10$GeZXX.I1wRz6z/2F3zSSaO.ednFnK5nDNH035RKaDna3ooxhvJRhC",
-                  "prevHash": "$2b$10$qGguZ4WieEYVxyLzuLAD6uczc1KcJOHEqY.dOep13XhFvjcD9VXea",
+                  "timestamp": 1644697283860,
+                  "blockHash": "$2b$10$uGrkxS.7ha4R4qWDJf16Gu9/doL9cNgTN7Tj54GGJcg3hxPJ6Yk96",
+                  "prevHash": "$2b$10$6bxBExfVWONpJakXDbHmT.RhuilYKLW6TK4g3OKCvMk6NSs2u1kxG",
                   "data": {
                         "sender": "Herbert",
                         "reciver": "Bengt",
@@ -35,12 +35,12 @@
             },
             {
                   "blockId": 3,
-                  "timestamp": 1644697017732,
-                  "blockHash": "$2b$10$p/84uK4GwTYReGLymkokv.DcGhiTRQhYDtyD3hurlaoaiwWzN7Xzm",
-                  "prevHash": "$2b$10$GeZXX.I1wRz6z/2F3zSSaO.ednFnK5nDNH035RKaDna3ooxhvJRhC",
+                  "timestamp": 1644697292113,
+                  "blockHash": "$2b$10$i3PmBlNDd3Y4HSvnDYmFaOF.Ms8OvyI3YDJ2ixhXxXtxymTOQXTYq",
+                  "prevHash": "$2b$10$uGrkxS.7ha4R4qWDJf16Gu9/doL9cNgTN7Tj54GGJcg3hxPJ6Yk96",
                   "data": {
-                        "sender": "Kung3",
-                        "reciver": "Hans3",
+                        "sender": "Kung4",
+                        "reciver": "Hans4",
                         "amount": 400
                   }
             }
