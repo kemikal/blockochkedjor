@@ -1,3 +1,7 @@
+const express = require('express');
+const app = express();
+const port = 1337;
+
 const bcrypt = require("bcrypt")
 
 // Klass för vårat "block" i blockkedjan
@@ -42,3 +46,10 @@ MyChain.addBlock({sender: "Herbert", reciver: "Bengt", amount: 54});
 // Logga ut kedjan
 console.log(JSON.stringify(MyChain, null, 6))
 
+app.get('/', (req, res) => {
+    res.send('<h1>Blocks and chains!</h1><div>'+JSON.stringify(MyChain, null, 6)+'</div>')
+});
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+});
