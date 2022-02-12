@@ -1,8 +1,26 @@
-const express = require('express');
+import express from "express"
 const app = express();
 const port = 1337;
 
-const bcrypt = require("bcrypt")
+import bodyParser from "body-parser";
+import cors from "cors";
+
+import bcrypt from "bcrypt";
+
+// lowdb
+import { join, dirname } from 'path';
+import { Low, JSONFile } from 'lowdb';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Use JSON file for storage
+const file = join(__dirname, 'db.json')
+const adapter = new JSONFile(file)
+const db = new Low(adapter)
+
+// Read data from JSON file, this will set db.data content
+await db.read()
 
 // Klass för vårat "block" i blockkedjan
 class Block{
@@ -46,8 +64,19 @@ MyChain.addBlock({sender: "Herbert", reciver: "Bengt", amount: 54});
 // Logga ut kedjan
 console.log(JSON.stringify(MyChain, null, 6))
 
+app.use(cors());
+// Configuring body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.get('/', (req, res) => {
-    res.send('<h1>Blocks and chains!</h1><div>'+JSON.stringify(MyChain, null, 6)+'</div>')
+    res.send('<h1>Block och kedjor!</h1><div>'+JSON.stringify(MyChain, null, 6)+'</div>')
+});
+
+app.post("/addblock", (req,res) => {
+    const block = req.body;
+
+    res.send("")
 });
 
 app.listen(port, () => {
