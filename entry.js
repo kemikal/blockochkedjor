@@ -1,4 +1,5 @@
-import express from "express"
+import express from "express";
+import fs from "fs";
 const app = express();
 const port = 1337;
 
@@ -7,20 +8,6 @@ import cors from "cors";
 
 import bcrypt from "bcrypt";
 
-// lowdb
-import { join, dirname } from 'path';
-import { Low, JSONFile } from 'lowdb';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Use JSON file for storage
-const file = join(__dirname, 'db.json')
-const adapter = new JSONFile(file)
-const db = new Low(adapter)
-
-// Read data from JSON file, this will set db.data content
-await db.read()
 
 // Klass för vårat "block" i blockkedjan
 class Block{
@@ -73,11 +60,56 @@ app.get('/', (req, res) => {
     res.send('<h1>Block och kedjor!</h1><div>'+JSON.stringify(MyChain, null, 6)+'</div>')
 });
 
-app.post("/addblock", (req,res) => {
-    const block = req.body;
+app.get('/chain', function(req, res, next) {
 
-    res.send("")
+    fs.readFile("db.json", function(err, data){
+      if (err) {
+        console.log(err);
+      }
+
+      const chain = JSON.parse(data);
+
+      let chainPrint = "<div>"
+      for (let block in chain.chain) {
+        chainPrint += "<div>" + chain.chain[block].data.sender + " -> " + chain.chain[block].data.reciver + "</div>"
+      }
+      chainPrint += "</div>"
+
+      console.log("get all", chain.chain);
+      res.send("<h1>Kedjan</h1>" + chainPrint);
+    });
 });
+
+app.post('/add', function(req, res) {
+
+    fs.readFile("db.json", function(err, data){
+      if (err) {
+        console.log(err);
+  
+        if (err.code == "ENOENT") {
+          console.log("Filen finns inte!");
+        }
+  
+        res.send("404 - Nått gick fel!")
+      }
+  
+      const ledger = JSON.parse(data)
+  
+      //let newBlock = req.body;
+      MyChain.addBlock(req.body);
+      
+      //ledger.posts.push(newBlock);
+  
+      fs.writeFile("db.json", JSON.stringify(MyChain, null, 6), function(err){
+        if (err) {
+          console.log(err);
+        }
+      })
+  
+      res.send(ledger)
+      
+    });
+  });
 
 app.listen(port, () => {
     console.log(`Server live on localhost:${port}`)

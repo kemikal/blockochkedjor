@@ -6,7 +6,7 @@
   "exports": "./entry.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"json-server --watch db.json\" \"nodemon entry.js\""
+    "start": "concurrently \"json-server --watch db.json\" \"nodemon --ignore 'db.json' entry.js\""
   },
   "author": "",
   "license": "ISC",
