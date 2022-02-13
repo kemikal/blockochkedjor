@@ -2,46 +2,13 @@
       "chain": [
             {
                   "blockId": 0,
-                  "timestamp": 1644697283726,
-                  "blockHash": "$2b$10$98KRweVdXz6rKAEmorC.UeCWGdla9C2U9fQiBafic2yfCNMtLRipi",
+                  "timestamp": 1644756969759,
+                  "blockHash": "$2b$10$GHmCKezHqOpuIaKr0iMjEONZ9s.RQbJPLx15Y.sTyD.TYerASWMRG",
                   "prevHash": "",
                   "data": {
-                        "sender": "Janne",
-                        "reciver": "Kalle",
-                        "amount": 234
-                  }
-            },
-            {
-                  "blockId": 1,
-                  "timestamp": 1644697283793,
-                  "blockHash": "$2b$10$6bxBExfVWONpJakXDbHmT.RhuilYKLW6TK4g3OKCvMk6NSs2u1kxG",
-                  "prevHash": "$2b$10$98KRweVdXz6rKAEmorC.UeCWGdla9C2U9fQiBafic2yfCNMtLRipi",
-                  "data": {
                         "sender": "Pelle",
-                        "reciver": "Anna",
+                        "reciver": "Palle",
                         "amount": 1234
-                  }
-            },
-            {
-                  "blockId": 2,
-                  "timestamp": 1644697283860,
-                  "blockHash": "$2b$10$uGrkxS.7ha4R4qWDJf16Gu9/doL9cNgTN7Tj54GGJcg3hxPJ6Yk96",
-                  "prevHash": "$2b$10$6bxBExfVWONpJakXDbHmT.RhuilYKLW6TK4g3OKCvMk6NSs2u1kxG",
-                  "data": {
-                        "sender": "Herbert",
-                        "reciver": "Bengt",
-                        "amount": 54
-                  }
-            },
-            {
-                  "blockId": 3,
-                  "timestamp": 1644697292113,
-                  "blockHash": "$2b$10$i3PmBlNDd3Y4HSvnDYmFaOF.Ms8OvyI3YDJ2ixhXxXtxymTOQXTYq",
-                  "prevHash": "$2b$10$uGrkxS.7ha4R4qWDJf16Gu9/doL9cNgTN7Tj54GGJcg3hxPJ6Yk96",
-                  "data": {
-                        "sender": "Kung4",
-                        "reciver": "Hans4",
-                        "amount": 400
                   }
             }
       ]
